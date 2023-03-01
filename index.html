@@ -27,6 +27,9 @@
 <!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
 <!-- /STYLES -->
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="form.js"></script>
+
 </head>
 
 <body> 
@@ -1001,28 +1004,9 @@
 							<div class="right">
 								<div class="fields">
 
-									<?php
-									if ($_SERVER["REQUEST_METHOD"] == "POST") {
-									  $name = $_POST['name'];
-									  $email = $_POST['email'];
-									  $message = $_POST['message'];
-									
-									  // Send email
-									  $to = "youremail@example.com";
-									  $subject = "New Contact Form Submission";
-									  $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
-									  $headers = "From: $email";
-									
-									  if (mail($to, $subject, $body, $headers)) {
-										echo "Thank you for your message!";
-									  } else {
-										echo "Sorry, there was an error sending your message. Please try again later.";
-									  }
-									}
-									?>
 
 
-									<form method="POST" class="contact_form" id="contact_form">
+									<form class="contact_form" id="contact_form">
 										<div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
 										<div class="empty_notice"><span>Please Fill Required Fields</span></div>
 										<div class="first">
@@ -1052,6 +1036,8 @@
 										<!-- If you want change mail address to yours, just open "modal" folder >> contact.php and go to line 4 and change detail to yours.  -->
 
 									</form>
+
+									<div id="response"></div>
 								</div>
 							</div>
 						</div>
