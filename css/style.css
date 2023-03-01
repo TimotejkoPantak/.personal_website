@@ -486,6 +486,31 @@ h6 { font-size: 16px; }
 }
 .edrea_tm_button.full a{display: block;}
 
+
+.edrea_tm_button input{
+	text-decoration: none;
+	color: #fff;
+	display: inline-block;
+	background-color: var(--main-color);
+	padding: 10px 40px;
+	text-align: center;
+	border-radius: 50px;
+	font-family: "Poppins";
+	
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+
+.edrea_tm_button input:hover{
+	background-color: #fff;
+	color: #000;
+}
+
+.edrea_tm_button.full input{display: block;}
+
 /*---------------------------------------------------*/
 /*	06) EDREA ABOUT
 /*---------------------------------------------------*/
