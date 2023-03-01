@@ -1000,7 +1000,29 @@
 							</div>
 							<div class="right">
 								<div class="fields">
-									<form action="contact.php" method="POST" class="contact_form" id="contact_form">
+
+									<?php
+									if ($_SERVER["REQUEST_METHOD"] == "POST") {
+									  $name = $_POST['name'];
+									  $email = $_POST['email'];
+									  $message = $_POST['message'];
+									
+									  // Send email
+									  $to = "youremail@example.com";
+									  $subject = "New Contact Form Submission";
+									  $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+									  $headers = "From: $email";
+									
+									  if (mail($to, $subject, $body, $headers)) {
+										echo "Thank you for your message!";
+									  } else {
+										echo "Sorry, there was an error sending your message. Please try again later.";
+									  }
+									}
+									?>
+
+
+									<form method="POST" class="contact_form" id="contact_form">
 										<div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
 										<div class="empty_notice"><span>Please Fill Required Fields</span></div>
 										<div class="first">
